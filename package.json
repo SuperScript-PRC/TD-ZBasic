@@ -1,0 +1,25 @@
+{
+  "name": "td-zbasic",
+  "displayName": "TD中文Basic",
+  "description": "ToolDelta中文Basic编程的语法高亮",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "tds",
+      "aliases": ["ToolDelta-ZBasic", "tds"],
+      "extensions": [".tds"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "tds",
+      "scopeName": "source.tdzbasic",
+      "path": "./syntaxes/tds.tmLanguage.json"
+    }]
+  }
+}

@@ -1,0 +1,114 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ToolDelta-ZBasic",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variable"
+		},
+		{
+			"include": "#builtin-functions"
+		},
+		{
+			"include": "#comments-base"
+		},
+		{
+			"include": "#builtin-types"
+		},
+		{
+			"include": "#literal"
+		},
+		{
+			"include": "#variable"
+		},
+		{
+			"include": "#constant"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.tds",
+					"match": "\\b(如果|又或者|那么|否则|结束如果|循环执行直到|结束循环)\\b"
+				},
+				{
+					"name": "keyword.control.tds",
+					"match": "\\b(赋值|设置|为|忽略空变量)\\b"
+				},
+				{
+					"name": "keyword.others.tds",
+					"match": "\\b(和|或|非)\\b"
+				},
+				{
+					"name": "keyword.control.tds",
+					"match": "\\b(行动栏打字|剧情框选择|剧情框显示|存储剧情数据|读取剧情数据|开始任务|完成任务|声明一次性剧情|商店页面|给予物品|设置禁止移动)\\b"
+				}
+			]
+		},
+		"builtin-functions": {
+            "patterns": [
+                {
+                    "name": "support.function.builtin.tds",
+                    "match": "\\b(输出|执行|聊天栏显示|等待|导入变量|转换为玩家选择器|取整|随机整数|为空变量|转换为整数|当前系统时间戳|以字符串开头|以字符串结尾|字符串长度|获取列表项)\\b"
+                },
+				{
+                    "name": "support.function.builtin.tds",
+                    "match": "\\b(获取计分板分数|获取目标坐标|玩家在线|在线玩家列表|转换为非空变量)\\b"
+                },
+				{
+                    "name": "support.function.builtin.tds",
+                    "match": "\\b(已完成剧情)\\b"
+                }
+            ]
+        },
+		"builtin-types": {
+            "name": "support.type.tds",
+            "match": "\\b(字符串|数值|是或否|空变量)\\b"
+        },
+		"literal": {
+            "patterns": [
+                {
+                    "name": "constant.language.python",
+                    "match": "\\b(是|否)\\b"
+                }
+            ]
+        },
+		"comments-base": {
+            "name": "comment.line.tds",
+            "begin": "(\\#)",
+            "end": "($)",
+            "patterns": [
+            ]
+        },
+		"strings": {
+			"name": "string.quoted.double.tds",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tds",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constant": {
+			"patterns": [
+				{
+					"match": "(?<![\\w\\d.])0[xX][0-9A-Fa-f]+(?![pPeE.0-9])",
+					"name": "constant.numeric.integer.hexadecimal.tds"
+				},
+				{
+					"match": "(?<![\\w\\d.])\\d+(\\.\\d*)?([eE]-?\\d*)?",
+					"name": "constant.numeric.float.tds"
+				}
+			]
+		}
+	},
+	"scopeName": "source.tdzbasic"
+}
