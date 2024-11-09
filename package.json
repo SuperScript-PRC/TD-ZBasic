@@ -10,16 +10,31 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "tds",
-      "aliases": ["ToolDelta-ZBasic", "tds"],
-      "extensions": [".tds"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "tds",
-      "scopeName": "source.tdzbasic",
-      "path": "./syntaxes/tds.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "tds",
+        "aliases": [
+          "ToolDelta-ZBasic",
+          "tds"
+        ],
+        "extensions": [
+          ".tds"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tds",
+        "scopeName": "source.tdzbasic",
+        "path": "./syntaxes/tds.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "tds",
+        "path": "./snippets/func.code-snippets"
+      }
+    ]
   }
 }
